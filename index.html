@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarsier ile Tanışın</title>
+    <title>Meet the Tarsier!</title>
     <style>
         body {
             font-family: 'Comic Sans MS', sans-serif;
@@ -216,8 +216,8 @@
     </style>
 </head>
 <body>
-    <!-- Ses elementleri -->
-    <audio id="dancing-sound" class="audio-control" loop autoplay>
+    <!-- Audio elements -->
+    <audio id="dancing-sound" class="audio-control">
         <source src="sounds/I Like To Move It (Original Video)  Madagascar HD (1).mp3" type="audio/mpeg">
     </audio>
     <audio id="jumping-sound" class="audio-control">
@@ -226,35 +226,35 @@
     <audio id="caught-sound" class="audio-control">
         <source src="sounds/Mort-cry (1).mp3" type="audio/mpeg">
     </audio>
-    <audio id="info-sound" class="audio-control" loop>
+    <audio id="info-sound" class="audio-control">
         <source src="ilan-sesi.mp3" type="audio/mpeg">
     </audio>
 
-    <h1>Tarsier ile Tanışın!</h1>
-    <p class="hint">Tarsier'i yakalamaya çalışın! Ona tıklayınca kaçacak, sonunda sizinle konuşmaya başlayacak.</p>
+    <h1>Meet the Tarsier!</h1>
+    <p class="hint">Try to catch the tarsier! When you click on it, it will run away. Finally, it will talk to you.</p>
     
     <div id="game-area">
-        <img id="tarsier-dancing" class="tarsier" src="img/mort-dans.gif" alt="Dans Eden Tarsier">
-        <img id="tarsier-jumping" class="tarsier" src="img/mort-zıplıyor.gif" alt="Zıplayan Tarsier">
+        <img id="tarsier-dancing" class="tarsier" src="img/mort-dans.gif" alt="Dancing Tarsier">
+        <img id="tarsier-jumping" class="tarsier" src="img/mort-zıplıyor.gif" alt="Jumping Tarsier">
     </div>
     
     <div id="caught-container">
         <div id="dialogue-box">
             <div id="dialogue-text"></div>
             <div class="dialog-buttons">
-                <button id="next-btn" class="action-button">Sonraki</button>
-                <button id="close-btn" class="action-button close-btn">Kapat</button>
+                <button id="next-btn" class="action-button">Next</button>
+                <button id="close-btn" class="action-button close-btn">Close</button>
             </div>
         </div>
-        <img id="tarsier-caught" class="tarsier" src="img/mort-cry.gif" alt="Yakalanan Tarsier">
+        <img id="tarsier-caught" class="tarsier" src="img/mort-cry.gif" alt="Caught Tarsier">
     </div>
     
     <div id="tarsier-info">
         <div style="text-align: center;" id="special-offer">
-            <h2>⭐ ÖZEL TEKLİF ⭐</h2>
-            <h3>Kendi Tarsier'inizi Sahiplenin!</h3>
-            <div class="price-tag">SADECE 999.99 TL!</div>
-            <p>(Şaka yapıyorum, tabii ki satmıyoruz! Ama bilgi alabilirsiniz 😊)</p>
+            <h2>⭐ SPECIAL OFFER ⭐</h2>
+            <h3>Adopt Your Own Tarsier!</h3>
+            <div class="price-tag">ONLY 59,99 $!</div>
+            <p>(We do not take responsibility. There is no refund.)</p>
         </div>
         
         <div class="product-gallery">
@@ -264,61 +264,61 @@
             <img src="img/mort-4.gif" alt="Tarsier 4">
         </div>
         
-        <h2>Tarsier Hakkında Detaylı Bilgiler</h2>
+        <h2>Detailed Information About Tarsiers</h2>
         
         <div class="features">
             <div class="feature">
-                <h3>Özellikler</h3>
+                <h3>Features</h3>
                 <ul>
-                    <li><strong>Bilimsel Adı:</strong> Tarsius</li>
-                    <li><strong>Boyutu:</strong> 10-15 cm (vücut)</li>
-                    <li><strong>Kuyruk:</strong> 20-25 cm</li>
-                    <li><strong>Ağırlık:</strong> 80-160 gram</li>
-                    <li><strong>Yaşam Süresi:</strong> 12-20 yıl</li>
-                    <li><strong>Habitat:</strong> Güneydoğu Asya</li>
+                    <li><strong>Scientific Name:</strong> Tarsius</li>
+                    <li><strong>Size:</strong> 10-15 cm (body)</li>
+                    <li><strong>Tail:</strong> 20-25 cm</li>
+                    <li><strong>Weight:</strong> 80-160 grams</li>
+                    <li><strong>Lifespan:</strong> 12-20 years</li>
+                    <li><strong>Habitat:</strong> Southeast Asia</li>
                 </ul>
             </div>
             
             <div class="feature">
-                <h3>Bakım Gereksinimleri</h3>
+                <h3>Care Requirements</h3>
                 <ul>
-                    <li>Gece aktif olduğu için gündüz sessiz ortam</li>
-                    <li>Böceklerle beslenir (günde 10-15 böcek)</li>
-                    <li>Geniş dikey yaşam alanı</li>
-                    <li>20-30°C sıcaklık</li>
-                    <li>%60-80 nem oranı</li>
+                    <li>Quiet place during the day (they are nocturnal)</li>
+                    <li>Eats insects (10-15 insects per day)</li>
+                    <li>Needs tall living space</li>
+                    <li>Temperature: 20-30°C</li>
+                    <li>Humidity: 60-80%</li>
                 </ul>
             </div>
             
             <div class="feature">
-                <h3>İlginç Gerçekler</h3>
+                <h3>Interesting Facts</h3>
                 <ul>
-                    <li>Gözleri beyinlerinden büyük tek memeli</li>
-                    <li>Kafalarını 180° çevirebilirler</li>
-                    <li>Mükemmel gece görüşü</li>
-                    <li>Sessiz iletişim kurarlar</li>
-                    <li>Tek eşli yaşarlar</li>
+                    <li>All species have the same appearance, so it's a complete surprise which species will come next. Just like Kinder.</li>
+                    <li>Its eyes are bigger than its brain, it can't hurt you because it's stupid.</li>
+                    <li>It is a perfect pet. Be careful at night.</li>
+                    <li>Excellent night vision</li>
+                    <li>Communicate silently</li>
                 </ul>
             </div>
         </div>
         
         <div class="testimonials">
-            <h3>Müşteri Yorumları</h3>
-            <p>"Tarsier'im Mort sayesinde evimiz neşe doldu! Her sabah onun sevimli bakışlarıyla uyanıyorum."</p>
-            <p class="testimonial-author">- Ayşe K., İstanbul</p>
+            <h3>Customer Reviews</h3>
+            <p>"My home is full of joy with my tarsier Mort! I wake up to his cute face every morning."</p>
+            <p class="testimonial-author">- Izel Uludag, Ankara</p>
             
-            <p>"Başta çekinsem de şimdi onsuz bir hayat düşünemiyorum. Böcekleri yakalayışını izlemek paha biçilemez!"</p>
-            <p class="testimonial-author">- Mehmet T., Ankara</p>
+            <p>"At first I was afraid, but now I can't imagine life without him. Watching him catch insects is priceless!"</p>
+            <p class="testimonial-author">- Mauro Icardi, Istanbul</p>
         </div>
         
         <div style="text-align: center; margin-top: 30px;">
-            <button id="play-again" class="action-button">Tekrar Oyna</button>
-            <button class="action-button" style="background-color: #ff9800;">Sipariş Ver (Şaka!)</button>
+            <button id="play-again" class="action-button">Play Again</button>
+            <button class="action-button" style="background-color: #ff9800;">Order Now (Just Kidding!)</button>
         </div>
     </div>
     
     <script>
-        // Elementler
+        // Elements
         const tarsierDancing = document.getElementById('tarsier-dancing');
         const tarsierJumping = document.getElementById('tarsier-jumping');
         const tarsierCaught = document.getElementById('tarsier-caught');
@@ -332,25 +332,26 @@
         const playAgainBtn = document.getElementById('play-again');
         const specialOffer = document.getElementById('special-offer');
         
-        // Ses elementleri
+        // Audio elements
         const dancingSound = document.getElementById('dancing-sound');
         const jumpingSound = document.getElementById('jumping-sound');
         const caughtSound = document.getElementById('caught-sound');
         const infoSound = document.getElementById('info-sound');
         
-        // Oyun değişkenleri
+        // Game variables
         let clickCount = 0;
         const dialogues = [
-            "Vay canına, beni yakaladın! 😮",
-            "Ben Mort! Madagaskar'ın en sevimli sakiniyim!",
-            "Gözlerim kocaman değil mi? Karanlıkta mükemmel görürüm!",
-            "Kafamı tam 180 derece çevirebilirim, inanılmaz değil mi?",
-            "Beni yakaladığına göre artık seninle yaşayabilirim!",
-            "Aşağıda benim hakkımda her şeyi öğrenebilirsin 👇"
+            "Wow, you caught me! 😮",
+            "I'm Mort! The cutest from Madagascar!",
+            "My eyes are big, right? I see very well in the dark!",
+            "I can turn my head 180 degrees. Amazing, isn't it?",
+            "Now that you caught me, I can live with you!",
+            "You can learn all about me below 👇"
         ];
         let currentDialogue = 0;
+        let isFirstClick = true;
         
-        // Tarsier'i rastgele hareket ettir
+        // Move tarsier randomly
         function moveTarsier() {
             const maxX = gameArea.offsetWidth - tarsierJumping.offsetWidth;
             const maxY = gameArea.offsetHeight - tarsierJumping.offsetHeight;
@@ -362,18 +363,18 @@
             tarsierJumping.style.top = randomY + 'px';
         }
         
-        // Diyalog göster
+        // Show dialogue
         function showDialogue() {
             dialogueBox.style.display = 'block';
             dialogueText.textContent = dialogues[currentDialogue];
         }
         
-        // Oyun durumlarını yönet
+        // Manage game states
         function setGameState(state) {
-            // Tüm tarsier'leri gizle
+            // Hide all tarsiers
             document.querySelectorAll('.tarsier').forEach(el => el.style.display = 'none');
             
-            // Sesleri durdur
+            // Stop all sounds
             dancingSound.pause();
             jumpingSound.pause();
             caughtSound.pause();
@@ -388,7 +389,7 @@
                         dancingSound.currentTime = 0;
                         dancingSound.play();
                     } catch (e) {
-                        console.log("Ses çalma hatası:", e);
+                        console.log("Audio error:", e);
                     }
                     break;
                 case 'jumping':
@@ -397,6 +398,7 @@
                     tarsierJumping.style.display = 'block';
                     jumpingSound.currentTime = 0;
                     jumpingSound.play();
+                    dancingSound.pause();
                     break;
                 case 'caught':
                     gameArea.style.display = 'none';
@@ -413,43 +415,47 @@
             }
         }
         
-        // Oyun başlat
+        // Start game
         function startGame() {
             clickCount = 0;
             currentDialogue = 0;
             dialogueBox.style.display = 'none';
             tarsierInfo.style.display = 'none';
+            isFirstClick = true;
             
             setGameState('dancing');
             
             gameArea.addEventListener('click', function firstClick() {
-                setGameState('jumping');
-                moveTarsier();
-                
-                // Tarsier'e tıklama olayını ekle
-                tarsierJumping.addEventListener('click', tarsierClickHandler);
-            }, {once: true});
+                if (isFirstClick) {
+                    setGameState('jumping');
+                    moveTarsier();
+                    isFirstClick = false;
+                    
+                    // Add click event to tarsier
+                    tarsierJumping.addEventListener('click', tarsierClickHandler);
+                }
+            });
         }
         
-        // Tarsier'e tıklandığında
+        // When tarsier is clicked
         function tarsierClickHandler() {
             clickCount++;
             
             if (clickCount >= 5) {
-                // Yakalandı
+                // Caught
                 setGameState('caught');
                 
-                // Tıklama olayını kaldır
+                // Remove click event
                 tarsierJumping.removeEventListener('click', tarsierClickHandler);
             } else {
-                // Kaç
+                // Run away
                 jumpingSound.currentTime = 0;
                 jumpingSound.play();
                 moveTarsier();
             }
         }
         
-        // Sonraki diyalog
+        // Next dialogue
         nextBtn.addEventListener('click', function() {
             currentDialogue++;
             if (currentDialogue < dialogues.length) {
@@ -457,32 +463,32 @@
             } else {
                 setGameState('info');
                 tarsierInfo.style.display = 'block';
-                // Özel teklif bölümüne git
+                // Scroll to special offer
                 specialOffer.scrollIntoView({ behavior: 'smooth' });
             }
         });
         
-        // Diyaloğu kapat
+        // Close dialogue
         closeBtn.addEventListener('click', function() {
             setGameState('info');
             tarsierInfo.style.display = 'block';
-            // Özel teklif bölümüne git
+            // Scroll to special offer
             specialOffer.scrollIntoView({ behavior: 'smooth' });
         });
         
-        // Tekrar oyna
+        // Play again
         playAgainBtn.addEventListener('click', startGame);
         
-        // Sayfa yüklendiğinde oyunu başlat
+        // Start game when page loads
         window.addEventListener('load', function() {
             startGame();
             
-            // Otomatik ses çalma için kullanıcı etkileşimi bekleyelim
+            // Wait for user interaction to play audio
             document.body.addEventListener('click', function initAudio() {
                 try {
                     dancingSound.play();
                 } catch (e) {
-                    console.log("Ses çalma hatası:", e);
+                    console.log("Audio error:", e);
                 }
                 document.body.removeEventListener('click', initAudio);
             }, { once: true });
