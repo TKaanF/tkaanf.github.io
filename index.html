@@ -1,498 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet the Tarsier!</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5dc;
-            color: #333;
-        }
-        
-        #game-area {
-            width: 100%;
-            height: 70vh;
-            position: relative;
-            border-bottom: 3px solid #8b4513;
-            background-size: cover;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        
-        .tarsier {
-            position: absolute;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            z-index: 10;
-            display: none;
-        }
-        
-        #tarsier-dancing {
-            width: 250px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        #tarsier-jumping {
-            width: 150px;
-        }
-        
-        #tarsier-caught {
-            width: 250px;
-            left: 50%;
-            bottom: 150px;
-            transform: translateX(-50%);
-        }
-        
-        #caught-container {
-            display: none;
-            text-align: center;
-            padding: 20px 0;
-        }
-        
-        #dialogue-box {
-            display: none;
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        #dialogue-text {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        .dialog-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        #tarsier-info {
-            display: none;
-            padding: 30px;
-            background-color: #fff9e6;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 900px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border: 2px solid #8b4513;
-        }
-        
-        .action-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 8px 4px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        
-        .action-button:hover {
-            background-color: #45a049;
-        }
-        
-        .close-btn {
-            background-color: #f44336;
-        }
-        
-        h1 {
-            text-align: center;
-            color: #8b4513;
-            margin-top: 20px;
-            font-size: 2em;
-        }
-        
-        .hint {
-            text-align: center;
-            font-style: italic;
-            color: #666;
-            font-size: 1.1em;
-            padding: 0 15px;
-        }
-        
-        .product-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
-        }
-        
-        .product-gallery img {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #8b4513;
-            transition: transform 0.3s;
-        }
-        
-        .product-gallery img:hover {
-            transform: scale(1.05);
-        }
-        
-        .price-tag {
-            background-color: #ff6b6b;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1.3em;
-            display: inline-block;
-            margin: 15px 0;
-            font-weight: bold;
-        }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        .feature h3 {
-            color: #8b4513;
-            border-bottom: 2px dashed #8b4513;
-            padding-bottom: 10px;
-        }
-        
-        .testimonials {
-            background-color: #e6f7ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 5px solid #4CAF50;
-        }
-        
-        .testimonial-author {
-            text-align: right;
-            font-style: italic;
-            margin-top: 10px;
-            color: #555;
-        }
-        
-        .audio-control {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            #tarsier-caught {
-                width: 200px;
-            }
-            
-            #dialogue-box {
-                width: 90%;
-                padding: 15px;
-            }
-            
-            .feature {
-                min-width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barışalım mı?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe6e6;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: #b30000;
+      z-index: 1;
+    }
+
+    #buttons {
+      z-index: 1;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease, font-size 0.3s ease;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+      position: relative;
+      z-index: 1;
+      transform: scale(1);
+    }
+
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    #finalMsg {
+      display: none;
+      font-size: 22px;
+      color: #006600;
+      z-index: 2;
+    }
+
+    #yesBtn.fullscreen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      font-size: 40px;
+      border-radius: 0;
+      z-index: 5;
+      transform: none !important;
+    }
+  </style>
 </head>
 <body>
-    <!-- Audio elements -->
-    <audio id="dancing-sound" class="audio-control">
-        <source src="sounds/I Like To Move It (Original Video)  Madagascar HD (1).mp3" type="audio/mpeg">
-    </audio>
-    <audio id="jumping-sound" class="audio-control">
-        <source src="sounds/Mort-AAA (1).mp3" type="audio/mpeg">
-    </audio>
-    <audio id="caught-sound" class="audio-control">
-        <source src="sounds/Mort-cry (1).mp3" type="audio/mpeg">
-    </audio>
-    <audio id="info-sound" class="audio-control">
-        <source src="ilan-sesi.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Çok özür dilerim... Barışalım mı? 🥺</h1>
 
-    <h1>Meet the Tarsier!</h1>
-    <p class="hint">Try to catch the tarsier! When you click on it, it will run away. Finally, it will talk to you.</p>
-    
-    <div id="game-area">
-        <img id="tarsier-dancing" class="tarsier" src="img/mort-dans.gif" alt="Dancing Tarsier">
-        <img id="tarsier-jumping" class="tarsier" src="img/mort-zıplıyor.gif" alt="Jumping Tarsier">
-    </div>
-    
-    <div id="caught-container">
-        <div id="dialogue-box">
-            <div id="dialogue-text"></div>
-            <div class="dialog-buttons">
-                <button id="next-btn" class="action-button">Next</button>
-                <button id="close-btn" class="action-button close-btn">Close</button>
-            </div>
-        </div>
-        <img id="tarsier-caught" class="tarsier" src="img/mort-cry.gif" alt="Caught Tarsier">
-    </div>
-    
-    <div id="tarsier-info">
-        <div style="text-align: center;" id="special-offer">
-            <h2>⭐ SPECIAL OFFER ⭐</h2>
-            <h3>Adopt Your Own Tarsier!</h3>
-            <div class="price-tag">ONLY 59,99 $!</div>
-            <p>(We do not take responsibility. There is no refund.)</p>
-        </div>
-        
-        <div class="product-gallery">
-            <img src="img/mort-1.gif" alt="Tarsier 1">
-            <img src="img/mort-2.gif" alt="Tarsier 2">
-            <img src="img/mort-3.gif" alt="Tarsier 3">
-            <img src="img/mort-4.gif" alt="Tarsier 4">
-        </div>
-        
-        <h2>Detailed Information About Tarsiers</h2>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>Features</h3>
-                <ul>
-                    <li><strong>Scientific Name:</strong> Tarsius</li>
-                    <li><strong>Size:</strong> 10-15 cm (body)</li>
-                    <li><strong>Tail:</strong> 20-25 cm</li>
-                    <li><strong>Weight:</strong> 80-160 grams</li>
-                    <li><strong>Lifespan:</strong> 12-20 years</li>
-                    <li><strong>Habitat:</strong> Southeast Asia</li>
-                </ul>
-            </div>
-            
-            <div class="feature">
-                <h3>Care Requirements</h3>
-                <ul>
-                    <li>Quiet place during the day (they are nocturnal)</li>
-                    <li>Eats insects (10-15 insects per day)</li>
-                    <li>Needs tall living space</li>
-                    <li>Temperature: 20-30°C</li>
-                    <li>Humidity: 60-80%</li>
-                </ul>
-            </div>
-            
-            <div class="feature">
-                <h3>Interesting Facts</h3>
-                <ul>
-                    <li>All species have the same appearance, so it's a complete surprise which species will come next. Just like Kinder.</li>
-                    <li>Its eyes are bigger than its brain, it can't hurt you because it's stupid.</li>
-                    <li>It is a perfect pet. Be careful at night.</li>
-                    <li>Excellent night vision</li>
-                    <li>Communicate silently</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="testimonials">
-            <h3>Customer Reviews</h3>
-            <p>"My home is full of joy with my tarsier Mort! I wake up to his cute face every morning."</p>
-            <p class="testimonial-author">- Izel Uludag, Ankara</p>
-            
-            <p>"At first I was afraid, but now I can't imagine life without him. Watching him catch insects is priceless!"</p>
-            <p class="testimonial-author">- Mauro Icardi, Istanbul</p>
-        </div>
-        
-        <div style="text-align: center; margin-top: 30px;">
-            <button id="play-again" class="action-button">Play Again</button>
-            <button class="action-button" style="background-color: #ff9800;">Order Now (Just Kidding!)</button>
-        </div>
-    </div>
-    
-    <script>
-        // Elements
-        const tarsierDancing = document.getElementById('tarsier-dancing');
-        const tarsierJumping = document.getElementById('tarsier-jumping');
-        const tarsierCaught = document.getElementById('tarsier-caught');
-        const gameArea = document.getElementById('game-area');
-        const caughtContainer = document.getElementById('caught-container');
-        const dialogueBox = document.getElementById('dialogue-box');
-        const dialogueText = document.getElementById('dialogue-text');
-        const nextBtn = document.getElementById('next-btn');
-        const closeBtn = document.getElementById('close-btn');
-        const tarsierInfo = document.getElementById('tarsier-info');
-        const playAgainBtn = document.getElementById('play-again');
-        const specialOffer = document.getElementById('special-offer');
-        
-        // Audio elements
-        const dancingSound = document.getElementById('dancing-sound');
-        const jumpingSound = document.getElementById('jumping-sound');
-        const caughtSound = document.getElementById('caught-sound');
-        const infoSound = document.getElementById('info-sound');
-        
-        // Game variables
-        let clickCount = 0;
-        const dialogues = [
-            "Wow, you caught me! 😮",
-            "I'm Mort! The cutest from Madagascar!",
-            "My eyes are big, right? I see very well in the dark!",
-            "I can turn my head 180 degrees. Amazing, isn't it?",
-            "Now that you caught me, I can live with you!",
-            "You can learn all about me below 👇"
-        ];
-        let currentDialogue = 0;
-        let isFirstClick = true;
-        
-        // Move tarsier randomly
-        function moveTarsier() {
-            const maxX = gameArea.offsetWidth - tarsierJumping.offsetWidth;
-            const maxY = gameArea.offsetHeight - tarsierJumping.offsetHeight;
-            
-            const randomX = Math.floor(Math.random() * maxX);
-            const randomY = Math.floor(Math.random() * maxY);
-            
-            tarsierJumping.style.left = randomX + 'px';
-            tarsierJumping.style.top = randomY + 'px';
-        }
-        
-        // Show dialogue
-        function showDialogue() {
-            dialogueBox.style.display = 'block';
-            dialogueText.textContent = dialogues[currentDialogue];
-        }
-        
-        // Manage game states
-        function setGameState(state) {
-            // Hide all tarsiers
-            document.querySelectorAll('.tarsier').forEach(el => el.style.display = 'none');
-            
-            // Stop all sounds
-            dancingSound.pause();
-            jumpingSound.pause();
-            caughtSound.pause();
-            infoSound.pause();
-            
-            switch(state) {
-                case 'dancing':
-                    gameArea.style.display = 'block';
-                    caughtContainer.style.display = 'none';
-                    tarsierDancing.style.display = 'block';
-                    try {
-                        dancingSound.currentTime = 0;
-                        dancingSound.play();
-                    } catch (e) {
-                        console.log("Audio error:", e);
-                    }
-                    break;
-                case 'jumping':
-                    gameArea.style.display = 'block';
-                    caughtContainer.style.display = 'none';
-                    tarsierJumping.style.display = 'block';
-                    jumpingSound.currentTime = 0;
-                    jumpingSound.play();
-                    dancingSound.pause();
-                    break;
-                case 'caught':
-                    gameArea.style.display = 'none';
-                    caughtContainer.style.display = 'block';
-                    tarsierCaught.style.display = 'block';
-                    caughtSound.currentTime = 0;
-                    caughtSound.play();
-                    showDialogue();
-                    break;
-                case 'info':
-                    infoSound.currentTime = 0;
-                    infoSound.play();
-                    break;
-            }
-        }
-        
-        // Start game
-        function startGame() {
-            clickCount = 0;
-            currentDialogue = 0;
-            dialogueBox.style.display = 'none';
-            tarsierInfo.style.display = 'none';
-            isFirstClick = true;
-            
-            setGameState('dancing');
-            
-            gameArea.addEventListener('click', function firstClick() {
-                if (isFirstClick) {
-                    setGameState('jumping');
-                    moveTarsier();
-                    isFirstClick = false;
-                    
-                    // Add click event to tarsier
-                    tarsierJumping.addEventListener('click', tarsierClickHandler);
-                }
-            });
-        }
-        
-        // When tarsier is clicked
-        function tarsierClickHandler() {
-            clickCount++;
-            
-            if (clickCount >= 5) {
-                // Caught
-                setGameState('caught');
-                
-                // Remove click event
-                tarsierJumping.removeEventListener('click', tarsierClickHandler);
-            } else {
-                // Run away
-                jumpingSound.currentTime = 0;
-                jumpingSound.play();
-                moveTarsier();
-            }
-        }
-        
-        // Next dialogue
-        nextBtn.addEventListener('click', function() {
-            currentDialogue++;
-            if (currentDialogue < dialogues.length) {
-                dialogueText.textContent = dialogues[currentDialogue];
-            } else {
-                setGameState('info');
-                tarsierInfo.style.display = 'block';
-                // Scroll to special offer
-                specialOffer.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-        
-        // Close dialogue
-        closeBtn.addEventListener('click', function() {
-            setGameState('info');
-            tarsierInfo.style.display = 'block';
-            // Scroll to special offer
-            specialOffer.scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        // Play again
-        playAgainBtn.addEventListener('click', startGame);
-        
-        // Start game when page loads
-        window.addEventListener('load', function() {
-            startGame();
-            
-            // Wait for user interaction to play audio
-            document.body.addEventListener('click', function initAudio() {
-                try {
-                    dancingSound.play();
-                } catch (e) {
-                    console.log("Audio error:", e);
-                }
-                document.body.removeEventListener('click', initAudio);
-            }, { once: true });
-        });
-    </script>
+  <div id="buttons">
+    <button id="yesBtn">Evet 💖</button>
+    <button id="noBtn">Hayır 🙁</button>
+  </div>
+
+  <div id="finalMsg">Barıştığın için çok teşekkür ederim... Seni çok seviyorum! 💗</div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const finalMsg = document.getElementById("finalMsg");
+
+    const hayirMesajlari = [
+      "Lütfen ama 😔",
+      "Gerçekten üzgünüm...",
+      "Hadi nolur 🥺",
+      "Seninle konuşmadan yapamıyorum",
+      "Kalbim kırık 😢",
+      "Barışalım mı...",
+      "Hayır deme nolur",
+      "Seni çok özledim...",
+      "Sadece bir 'evet' yeter 💗"
+    ];
+
+    let clickCount = 0;
+    let scale = 1;
+
+    noBtn.addEventListener("click", () => {
+      if (clickCount < hayirMesajlari.length) {
+        noBtn.textContent = hayirMesajlari[clickCount];
+        clickCount++;
+        scale += 0.3;
+        yesBtn.style.transform = `scale(${scale})`;
+      }
+
+      if (scale >= 3) { // 3x büyüklükte ekranı kaplar gibi olur
+        yesBtn.classList.add("fullscreen");
+        noBtn.style.display = "none";
+      }
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.getElementById("buttons").style.display = "none";
+      finalMsg.style.display = "block";
+    });
+  </script>
 </body>
 </html>
