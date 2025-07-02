@@ -1,130 +1,265 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barışalım mı?</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaan - Portföy</title>
+    <style>
+        :root {
+            --main-bg: #0a192f;
+            --text-light: #ccd6f6;
+            --text-dark: #8892b0;
+            --accent: #64ffda;
+            --font: 'Segoe UI', sans-serif;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ffe6e6;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
+        img.profile {
+            width: 350px;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
 
-    h1 {
-      color: #b30000;
-      z-index: 1;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    #buttons {
-      z-index: 1;
-    }
+        body {
+            font-family: var(--font);
+            background: var(--main-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
 
-    button {
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: 10px;
-      border: none;
-      border-radius: 12px;
-      transition: transform 0.3s ease, font-size 0.3s ease;
-      cursor: pointer;
-    }
+        header {
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-    #yesBtn {
-      background-color: #4CAF50;
-      color: white;
-      position: relative;
-      z-index: 1;
-      transform: scale(1);
-    }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
 
-    #noBtn {
-      background-color: #f44336;
-      color: white;
-      position: relative;
-      z-index: 1;
-    }
+        header h1 .highlight {
+            color: var(--accent);
+        }
 
-    #finalMsg {
-      display: none;
-      font-size: 22px;
-      color: #006600;
-      z-index: 2;
-    }
+        header p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
 
-    #yesBtn.fullscreen {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      font-size: 40px;
-      border-radius: 0;
-      z-index: 5;
-      transform: none !important;
-    }
-  </style>
+        .btn {
+            background: none;
+            border: 1px solid var(--accent);
+            padding: 10px 25px;
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: #0a192f;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skills li {
+            background-color: #112240;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: var(--accent);
+            transition: 0.3s;
+        }
+
+        .skills li:hover {
+            background-color: var(--accent);
+            color: #0a192f;
+        }
+
+        .projects .project {
+            background-color: #112240;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .projects .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        .projects .project {
+            background-color: #112240;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .projects .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            color: var(--accent);
+            margin: 0;
+        }
+
+        .project p {
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .project .btn {
+            width: fit-content;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Çok özür dilerim... Barışalım mı? 🥺</h1>
 
-  <div id="buttons">
-    <button id="yesBtn">Evet 💖</button>
-    <button id="noBtn">Hayır 🙁</button>
-  </div>
+    <header>
+        <h1>Merhaba, ben <span class="highlight">Kaan</span></h1>
+        <img src="img/KaanF.jpg" alt="Kaan" class="profile">
+        <p>Modern ve kullanıcı dostu web siteleri geliştiriyorum.</p>
+        <a href="#projects" class="btn">Projelerimi Gör</a>
+    </header>
 
-  <div id="finalMsg">Barıştığın için çok teşekkür ederim... Seni çok seviyorum bitanecim 💗</div>
+    <section class="about" id="about">
+        <h2>Hakkımda</h2>
+        <p>Bilgisayar Programcılığı öğrencisiyim. Yazılım dünyasında sadece tek bir alana değil, bütüne hâkim olmayı
+            hedefliyorum.
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const finalMsg = document.getElementById("finalMsg");
+            Bir fikrin sıfırdan koda dökülmesi, arka planda çalışan mantıkların ön yüzdeki kullanıcıyla buluşması beni
+            gerçekten heyecanlandırıyor.
 
-    const hayirMesajlari = [
-      "Lütfen bitanem",
-      "Gerçekten özür dilerim",
-      "Hadi nolur güzelim",
-      "Seninle konuşmayınca kendimi çok kötü hissediyorum",
-      "Böyle olmak istemiyorum",
-      "Barışalım mı...",
-      "Hayır deme nolur",
-      "Seni çok özledim...",
-      
-    ];
+            Tasarımdan veritabanına, kullanıcı deneyiminden performansa kadar her katmanda kendimi geliştirmeye
+            çalışıyorum. Frontend veya backend ayrımı yapmıyorum; sistemi anlayarak üretmek, her parçayı yerli yerine
+            oturtmak istiyorum.
 
-    let clickCount = 0;
-    let scale = 1;
+            Amacım, ihtiyaç duyulan her yerde devreye girebilen, tam donanımlı bir Full Stack geliştirici olmak.</p>
+    </section>
 
-    noBtn.addEventListener("click", () => {
-      if (clickCount < hayirMesajlari.length) {
-        noBtn.textContent = hayirMesajlari[clickCount];
-        clickCount++;
-        scale += 0.3;
-        yesBtn.style.transform = `scale(${scale})`;
-      }
+    <section class="skills" id="skills">
+        <h2>Beceriler</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>Microsoft SQL Server</li>
+            <li>Autodesk AutoCAD / Autodesk Inventor</li>
+            <li>Node.js (öğreniyor)</li>
+            <li>React (öğreniyor)</li>
 
-      if (scale >= 3) { // 3x büyüklükte ekranı kaplar gibi olur
-        yesBtn.classList.add("fullscreen");
-        noBtn.style.display = "none";
-      }
-    });
+        </ul>
+    </section>
 
-    yesBtn.addEventListener("click", () => {
-      document.getElementById("buttons").style.display = "none";
-      finalMsg.style.display = "block";
-    });
-  </script>
+    <section class="projects" id="projects">
+        <h2>Projeler</h2>
+
+        <div class="project">
+            <h3>Kurumsal Web Sitesi</h3>
+            <p>Wordpress kullanılarak yapılan bir kurumsal web sitesi.</p>
+            <a href="https://www.filizsoft.com" class="btn" target="_blank">Canlı Gör</a>
+        </div>
+
+        <div class="project">
+            <h3>Responsive Kişisel Blog</h3>
+            <p>Mobil uyumlu kişisel blog sitesi. Modern tasarım, sade görünüm.</p>
+            <a href="#" class="btn">Canlı Gör</a>
+        </div>
+        <div class="project">
+            <h3>Responsive Kişisel Blog</h3>
+            <p>Mobil uyumlu kişisel blog sitesi. Modern tasarım, sade görünüm.</p>
+            <a href="https://www.tunahanoztemel.github.io" class="btn">Canlı Gör</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>İletişim</h2>
+        <p>E-posta: <a href="mailto:tevfikaanfiliz@gmail.com">tevfikaanfiliz@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/tkaanf" target="_blank">https://github.com/TKaanF</a></p>
+    </section>
+
+    <footer>
+        © 2025 Kaan. Tüm hakları saklıdır.
+    </footer>
+
 </body>
+
 </html>
